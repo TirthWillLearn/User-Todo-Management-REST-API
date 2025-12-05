@@ -1,0 +1,191 @@
+{
+  "info": {
+    "name": "User-Todo-API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\\\"name\\\":\\\"Test\\\",\\\"email\\\":\\\"test@example.com\\\",\\\"password\\\":\\\"pass123\\\"}"
+        },
+        "url": {
+          "raw": "{{url}}/api/auth/register",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\\\"email\\\":\\\"test@example.com\\\",\\\"password\\\":\\\"pass123\\\"}"
+        },
+        "url": {
+          "raw": "{{url}}/api/auth/login",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Profile",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{url}}/api/user/profile",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "user",
+            "profile"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Todo",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\\\"title\\\":\\\"First todo\\\",\\\"description\\\":\\\"desc\\\"}"
+        },
+        "url": {
+          "raw": "{{url}}/api/todos",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "todos"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Todos",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{url}}/api/todos",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "todos"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Todo",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\\\"status\\\":\\\"completed\\\"}"
+        },
+        "url": {
+          "raw": "{{url}}/api/todos/:id",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "todos",
+            ":id"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Todo",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{url}}/api/todos/:id",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "todos",
+            ":id"
+          ]
+        }
+      }
+    }
+  ]
+}
