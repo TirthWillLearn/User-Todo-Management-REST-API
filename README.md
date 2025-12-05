@@ -112,6 +112,7 @@ npx prisma migrate dev --name init
 ```bash
 npm run dev
 ```
+📥 API Collection: [postman_collection.json](./postman_collection.json)
 
 ---
 
