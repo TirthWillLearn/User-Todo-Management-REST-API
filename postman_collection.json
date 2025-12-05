@@ -1,191 +1,222 @@
 {
-  "info": {
-    "name": "User-Todo-API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "Register",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\\\"name\\\":\\\"Test\\\",\\\"email\\\":\\\"test@example.com\\\",\\\"password\\\":\\\"pass123\\\"}"
-        },
-        "url": {
-          "raw": "{{url}}/api/auth/register",
-          "host": [
-            "{{url}}"
-          ],
-          "path": [
-            "api",
-            "auth",
-            "register"
-          ]
-        }
-      }
-    },
-    {
-      "name": "Login",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\\\"email\\\":\\\"test@example.com\\\",\\\"password\\\":\\\"pass123\\\"}"
-        },
-        "url": {
-          "raw": "{{url}}/api/auth/login",
-          "host": [
-            "{{url}}"
-          ],
-          "path": [
-            "api",
-            "auth",
-            "login"
-          ]
-        }
-      }
-    },
-    {
-      "name": "Get Profile",
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{token}}"
-          }
-        ],
-        "url": {
-          "raw": "{{url}}/api/user/profile",
-          "host": [
-            "{{url}}"
-          ],
-          "path": [
-            "api",
-            "user",
-            "profile"
-          ]
-        }
-      }
-    },
-    {
-      "name": "Create Todo",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{token}}"
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\\\"title\\\":\\\"First todo\\\",\\\"description\\\":\\\"desc\\\"}"
-        },
-        "url": {
-          "raw": "{{url}}/api/todos",
-          "host": [
-            "{{url}}"
-          ],
-          "path": [
-            "api",
-            "todos"
-          ]
-        }
-      }
-    },
-    {
-      "name": "List Todos",
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{token}}"
-          }
-        ],
-        "url": {
-          "raw": "{{url}}/api/todos",
-          "host": [
-            "{{url}}"
-          ],
-          "path": [
-            "api",
-            "todos"
-          ]
-        }
-      }
-    },
-    {
-      "name": "Update Todo",
-      "request": {
-        "method": "PATCH",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{token}}"
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\\\"status\\\":\\\"completed\\\"}"
-        },
-        "url": {
-          "raw": "{{url}}/api/todos/:id",
-          "host": [
-            "{{url}}"
-          ],
-          "path": [
-            "api",
-            "todos",
-            ":id"
-          ]
-        }
-      }
-    },
-    {
-      "name": "Delete Todo",
-      "request": {
-        "method": "DELETE",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{token}}"
-          }
-        ],
-        "url": {
-          "raw": "{{url}}/api/todos/:id",
-          "host": [
-            "{{url}}"
-          ],
-          "path": [
-            "api",
-            "todos",
-            ":id"
-          ]
-        }
-      }
-    }
-  ]
+	"info": {
+		"_postman_id": "e3800a2d-d977-495a-9968-404307ac4555",
+		"name": "User & Todo Management REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43989256",
+		"_collection_link": "https://tirthpatel-2053439.postman.co/workspace/Tirth-Patel's-Workspace~4df68958-412e-472e-8351-abe8f897b2f9/collection/43989256-e3800a2d-d977-495a-9968-404307ac4555?action=share&source=collection_link&creator=43989256"
+	},
+	"item": [
+		{
+			"name": "http://localhost:4000/api/auth/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n    \"name\":\"Tirth Patel\",\n    \"email\":\"tirthp@example.com\", \n    \"password\":\"pass1234\" \n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"email\":\"tirthp@example.com\", \n    \"password\":\"pass1234\" \n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/api/user/profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0OTUzNzE4LCJleHAiOjE3Njc1NDU3MTh9.k_wdLeXFLZVak-7GkEEVjR8r0BMcqiIV2D_JoEE0AH8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/user/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/api/todos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0OTQ2MDkyLCJleHAiOjE3Njc1MzgwOTJ9.67s_7fRTGlwob2-9gDTMQTA9mZt21asqU7kQcpNLRmg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"title\":\"Learn Node\", \n    \"description\":\"Build Todo API\" \n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/api/todos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0OTQ2MDkyLCJleHAiOjE3Njc1MzgwOTJ9.67s_7fRTGlwob2-9gDTMQTA9mZt21asqU7kQcpNLRmg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/api/todos/2",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0OTQ2MDkyLCJleHAiOjE3Njc1MzgwOTJ9.67s_7fRTGlwob2-9gDTMQTA9mZt21asqU7kQcpNLRmg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"status\":\"completed\" }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/todos/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"todos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/api/todos/2",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY0OTQ2MDkyLCJleHAiOjE3Njc1MzgwOTJ9.67s_7fRTGlwob2-9gDTMQTA9mZt21asqU7kQcpNLRmg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/todos/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"todos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
 }
